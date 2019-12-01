@@ -1,0 +1,72 @@
+<!doctype html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport"
+        content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>ToDo App</title>
+  <style type="text/css">
+    html {
+      font-size: 62.5%;
+    }
+    body {
+      font-size: 1.6em;
+      color: #334;
+    }
+    #todo {
+      min-width: 300px;
+      max-width: 600px;
+      margin: auto;
+      background: beige;
+    }
+    #todo-input {
+    }
+    #todo-input input {
+      font-size: 1.8rem;
+      padding: 5px 10px;
+      border: none;
+      border-bottom: 1px solid #aaaaaa;
+      box-sizing: border-box;
+      width: 100%;
+    }
+    #todo-lists {
+      margin: 10px 0;
+    }
+    .todo-detail {
+      padding: 10px 0;
+      display: flex;
+      align-items: center;
+    }
+    .todo-detail input, .todo-detail p {
+      margin: 0;
+      padding: 0;
+    }
+    .todo-detail p {
+      font-size: 1.8rem;
+      line-height: 1.4;
+    }
+  </style>
+</head>
+<body>
+<div id="todo">
+  <div id="todo-input">
+    <input type="text" name="todo" value="" placeholder="input your ToDo">
+  </div>
+  <div id="todo-lists">
+    <div class="todo-detail">
+      <input type="checkbox" name="done-toggle">
+      <p>do something.....</p>
+    </div>
+    <div class="todo-detail">
+      <input type="checkbox" name="done-toggle">
+      <p>do something.....</p>
+    </div>
+    <div class="todo-detail">
+      <input type="checkbox" name="done-toggle">
+      <p>do something.....</p>
+    </div>
+  </div>
+</div>
+</body>
+</html>
