@@ -1,0 +1,29 @@
+<!doctype html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport"
+        content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>CSS in Web Components</title>
+  <script type="module" src="./normal-css.js"></script>
+  <script type="module" src="./normal-import-css.js"></script>
+  <script type="module" src="./adopted-css.js"></script>
+  <script type="module" src="./adopted-import-css.js"></script>
+  <script type="module" src="./css-modules.js"></script>
+</head>
+<body>
+<normal-css></normal-css>
+<normal-import-css></normal-import-css>
+<adopted-css></adopted-css>
+<adopted-import-css></adopted-import-css>
+<css-modules></css-modules>
+<p>not Web Components</p>
+<script>
+  // const elements = Array.from(Array(100), e => document.createElement('normal-css'))
+  // const elements = Array.from(Array(100), e => document.createElement('adopted-css'))
+  // const elements = Array.from(Array(100), e => document.createElement('normal-import-css'))
+  // document.body.append(...elements)
+</script>
+</body>
+</html>
