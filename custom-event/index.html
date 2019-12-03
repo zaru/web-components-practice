@@ -7,20 +7,21 @@
   <meta http-equiv="X-UA-Compatible" content="ie=edge">
   <title>CSS in Web Components</title>
   <script type="module" src="./my-custom-event.js"></script>
-  <script type="module" src="./photo-gallery.js"></script>
+<!--  <script type="module" src="./photo-gallery.js"></script>-->
 </head>
 <body>
 <my-custom-event></my-custom-event>
-<photo-gallery>
-  <img src="./images/1.jpg" slot="photos">
-  <img src="./images/2.jpg" slot="photos">
-  <img src="./images/3.jpg" slot="photos">
-  <img src="./images/4.jpg" slot="photos">
-</photo-gallery>
+<!--<photo-gallery>-->
+<!--  <img src="./images/1.jpg" slot="photos">-->
+<!--  <img src="./images/2.jpg" slot="photos">-->
+<!--  <img src="./images/3.jpg" slot="photos">-->
+<!--  <img src="./images/4.jpg" slot="photos">-->
+<!--</photo-gallery>-->
 <script>
   window.addEventListener('DOMContentLoaded', function() {
     const ce = document.querySelector('my-custom-event')
-    ce.addEventListener('clicked', e => { console.log(e.detail.hoge) })
+    ce.addEventListener('clicked', e => { console.log(e.detail) })
+    ce.hoge()
   })
 </script>
 </body>
