@@ -6,16 +6,22 @@
         content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
   <meta http-equiv="X-UA-Compatible" content="ie=edge">
   <title>CSS in Web Components</title>
-  <script type="module" src="./app.js"></script>
+  <script type="module" src="./my-custom-event.js"></script>
+  <script type="module" src="./photo-gallery.js"></script>
 </head>
 <body>
 <my-custom-event></my-custom-event>
+<photo-gallery>
+  <img src="./images/1.jpg" slot="photos">
+  <img src="./images/2.jpg" slot="photos">
+  <img src="./images/3.jpg" slot="photos">
+  <img src="./images/4.jpg" slot="photos">
+</photo-gallery>
 <script>
-  window.addEventListener('DOMContentLoaded', function(e) {
-    console.log('components ready');
+  window.addEventListener('DOMContentLoaded', function() {
     const ce = document.querySelector('my-custom-event')
-    ce.addEventListener('clicked', e => { console.log('clicked!!!!!!!!', e) })
-  });
+    ce.addEventListener('clicked', e => { console.log(e.detail.hoge) })
+  })
 </script>
 </body>
 </html>

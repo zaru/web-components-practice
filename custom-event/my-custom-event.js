@@ -3,7 +3,6 @@ class MyCustomEvent extends HTMLElement {
     super()
     this.attachShadow({mode: 'open'})
     this.addEventListener('click', this.fireClickedEvent)
-
   }
 
   connectedCallback() {
