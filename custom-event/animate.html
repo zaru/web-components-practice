@@ -1,0 +1,41 @@
+<!doctype html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport"
+        content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Document</title>
+  <style type="text/css">
+    .gallery {
+      width: 350px;
+      height: 100px;
+      overflow: hidden;
+      display: flex;
+    }
+    img {
+      width: 100px;
+      height: 100px;
+      object-fit: cover;
+      animation: 3s slide;
+    }
+    @keyframes slide {
+      from {
+        transform:translateX(0px);
+      }
+
+      to {
+        transform:translateX(100px);
+      }
+    }
+  </style>
+</head>
+<body>
+<ul class="gallery">
+  <img src="./images/1.jpg" class="animate">
+  <img src="./images/2.jpg" class="animate">
+  <img src="./images/3.jpg" class="animate">
+  <img src="./images/4.jpg" class="animate">
+</ul>
+</body>
+</html>

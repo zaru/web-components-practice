@@ -7,16 +7,32 @@
   <meta http-equiv="X-UA-Compatible" content="ie=edge">
   <title>CSS in Web Components</title>
   <script type="module" src="./my-custom-event.js"></script>
-<!--  <script type="module" src="./photo-gallery.js"></script>-->
+  <script type="module" src="./photo-gallery.js"></script>
+  <script type="module" src="./fetch-template.js"></script>
+
+  <style type="text/css">
+    @keyframes slide {
+      from {
+        transform:translateX(0px);
+      }
+
+      to {
+        transform:translateX(100px);
+      }
+    }
+  </style>
 </head>
 <body>
+<fetch-template>
+  <p slot="hoge">custom</p>
+</fetch-template>
 <my-custom-event></my-custom-event>
-<!--<photo-gallery>-->
-<!--  <img src="./images/1.jpg" slot="photos">-->
-<!--  <img src="./images/2.jpg" slot="photos">-->
-<!--  <img src="./images/3.jpg" slot="photos">-->
-<!--  <img src="./images/4.jpg" slot="photos">-->
-<!--</photo-gallery>-->
+<photo-gallery>
+  <img src="./images/1.jpg" slot="photos">
+  <img src="./images/2.jpg" slot="photos">
+  <img src="./images/3.jpg" slot="photos">
+  <img src="./images/4.jpg" slot="photos">
+</photo-gallery>
 <script>
   window.addEventListener('DOMContentLoaded', function() {
     const ce = document.querySelector('my-custom-event')

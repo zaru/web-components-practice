@@ -1,0 +1,59 @@
+<!doctype html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport"
+        content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Template</title>
+</head>
+<body>
+<template id="my-template">
+  <style>
+    p {
+      color: #f00; /* not work */
+    }
+    ::slotted(p) {
+      color: #f00;
+    }
+  </style>
+  <slot name="paragraph">default paragraph</slot>
+</template>
+<table>
+  <template id="my-table">
+    <tr>
+      <td></td>
+      <td></td>
+    </tr>
+  </template>
+</table>
+<my-template>
+  <p slot="paragraph">slotting paragraph</p>
+</my-template>
+<script>
+  // const template = document.querySelector('#my-template')
+  // const node = document.importNode(template.content, true)
+  // const node = template.content.cloneNode(true)
+  // document.body.appendChild(node)
+
+  // const template = document.querySelector('#my-table')
+  // for (let i = 0; i < 5; i++) {
+  //   const node = document.importNode(template.content, true)
+  //   const cells = node.querySelectorAll('td')
+  //   cells[0].textContent = `key ${i}`
+  //   cells[1].textContent = `value ${i}`
+  //   document.querySelector('table').appendChild(node)
+  // }
+  //
+  class MyTemplate extends HTMLElement {
+    constructor() {
+      super()
+      const template = document.querySelector('#my-template')
+      this.attachShadow({mode: 'open'})
+      this.shadowRoot.appendChild(template.content.cloneNode(true))
+    }
+  }
+  customElements.define('my-template', MyTemplate)
+</script>
+</body>
+</html>
