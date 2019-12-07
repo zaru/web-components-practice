@@ -8,6 +8,7 @@
   <title>Form</title>
   <script type="module" src="./my-form.js"></script>
   <script type="module" src="./checkbox.js"></script>
+  <script type="module" src="./cus-input.js"></script>
 </head>
 <body>
 <my-form></my-form>
@@ -20,6 +21,31 @@
 <!--  Password: <input type="password" name="password" value=""><br>-->
 <!--  <toggle-switch name="cccccccccc" value="toggle"></toggle-switch>-->
   <input type="submit">
+</form>
+<form method="post" action="./">
+  <label>
+    <div>
+      Normal <code>&lt;input&gt;</code>.<br>This will show up as "normal" in the form submission.
+    </div>
+    <input name="normal" placeholder="normal input" value="Hello">
+  </label>
+  <br>
+  <label>
+    <div>
+      Custom Element with an <code>&lt;input&gt;</code> inside the Shadow DOM.<br>This should show up as "custom element" in the form submission.
+    </div>
+    <custom-input name="custom element" placeholder="custom input" value="World"></custom-input>
+  </label>
+  <div>
+    <div>
+      A <code>&lt;div&gt;</code> with <code>contenteditable</code> enabled and an event listener for the <code>formdata</code> event. <br>This should show up as "contenteditable" in the form submission.
+    </div>
+    <div contenteditable id="contenteditable">
+      Click here, and type!
+    </div>
+  </div>
+  <br>
+  <button type="submit">Click to submit the form and see results</button>
 </form>
 </body>
 </html>
